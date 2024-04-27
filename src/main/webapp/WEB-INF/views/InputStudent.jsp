@@ -9,9 +9,9 @@
 <body>
 
 <form action="calculateResult" method="post">
-	StudentName : <input type="text" name="studentName"/><br><br> 
-	Perc :<input type="text" name="perc"/><br><br> 
-	BornYear : <input type="text" name="bornYear"/><br><br> 
+	StudentName : <input type="text" name="studentName" value="${student.studentName}"/>${studentNameError}<br><br> 
+	Perc :<input type="text" name="perc"   value="${student.perc}"/>${percError }<br><br> 
+	BornYear : <input type="text" name="bornYear"  value="${student.bornYear}"/>${bornYearError}<br><br> 
 	
 	<input type="submit" value="Result"/>
 </form>
