@@ -9,4 +9,8 @@ public class Validators {
 			return false;
 		}
 	}
+	public static boolean isAlpha(String str) {
+		String alphaReg = "[a-zA-Z]+";
+		return str.matches(alphaReg);
+	}
 }

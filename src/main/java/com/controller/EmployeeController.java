@@ -23,6 +23,9 @@ public class EmployeeController {
 		if (Validators.isEmpty(employee.getFirstName())) {
 			isError = true;
 			model.addAttribute("firstNameError", "Please Enter FirstName");
+		}else if(Validators.isAlpha(employee.getFirstName()) == false) {
+			isError = true;
+			model.addAttribute("firstNameError", "Please Enter Valid FirstName");
 		}
 		if (Validators.isEmpty(employee.getEmail())) {
 			isError = true;

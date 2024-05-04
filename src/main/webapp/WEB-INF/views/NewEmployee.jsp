@@ -30,7 +30,7 @@
 
 		</select> ${cityError}
 		
-		<br> <br> Hobby: Cricket: <input type="checkbox"
+		<br> <br> Hobby: Cricket: <input type="checkbox" 
 			name="hobby" value="ckt"> Whatsapp: <input type="checkbox"
 			name="hobby" value="wp"> Instagram: <input type="checkbox"
 			name="hobby" value="ig"> PickleBall: <input type="checkbox"
