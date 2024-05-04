@@ -28,6 +28,16 @@ public class EmployeeController {
 			isError = true;
 			model.addAttribute("emailError", "Please Enter Email");
 		}
+		if (Validators.isEmpty(employee.getGender())) {
+			isError = true;
+			model.addAttribute("genderError", "Please Select Gender");
+		}
+		if(employee.getCity().equals("-1")) {
+			isError =true;
+			model.addAttribute("cityError","Please Select City");
+		}
+		
+		
 		model.addAttribute("employee", employee);
 
 		if (isError == true) {
