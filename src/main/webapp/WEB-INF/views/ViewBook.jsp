@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h2>View Book</h2>
+	Name : ${book.bookName }<Br>
+	Author: ${book.authorName }
 </body>
 </html>

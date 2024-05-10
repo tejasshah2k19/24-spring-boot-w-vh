@@ -64,9 +64,26 @@ Spring ->controller ->
 hibernate-validator.jar 
 
 
+-------------------------------------------------------
+
+create database in mysql
+create table in database:mysql 
+
+add mysql-connector -> pom.xml 
+spring-jdbc { JdbcTemplate } 
+ 
+
+db configuration -> db info -> application.proerties 
+
+JdbcTemplate 
 
 
 
+class Person -> spring.xml -> <bean> 
+context.getBean() 
+
+annotation -> spring.xml 
+@Autowired 
 
 
 
