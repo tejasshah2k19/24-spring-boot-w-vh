@@ -9,6 +9,9 @@
 <body>
 	<h2>View Book</h2>
 	Name : ${book.bookName }<Br>
-	Author: ${book.authorName }
+	Author: ${book.authorName }<Br><br>
+	
+	<a href="listbooks">List ALL Books</a>
+	
 </body>
 </html>

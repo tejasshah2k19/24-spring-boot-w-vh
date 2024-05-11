@@ -85,7 +85,10 @@ context.getBean()
 annotation -> spring.xml 
 @Autowired 
 
+-------------------------------------------
 
+1) jstl.jar {pom.xml}
+2) import using taglib in jsp 
 
 
 

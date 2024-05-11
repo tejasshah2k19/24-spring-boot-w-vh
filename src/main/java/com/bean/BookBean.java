@@ -8,6 +8,8 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BookBean {
+	
+	Integer bookId;
 	@NotBlank
 	String bookName;
 	@NotBlank
