@@ -10,6 +10,9 @@
 </head>
 <body>
 
+	<br>
+	<a href="searchbook">Search</a>
+<br><br>
 	<table border="1">
 		<tr>
 			<th>BookId</th>

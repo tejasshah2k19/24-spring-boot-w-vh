@@ -47,13 +47,30 @@ public class BookController {
 	@GetMapping("/listbooks")
 	public String listBooks(Model model) {
 		List<BookBean> books = stmt.query("select * from books", new BeanPropertyRowMapper<BookBean>(BookBean.class));
-		model.addAttribute("books",books);
+		model.addAttribute("books", books);
 		return "ListBooks";
 		// c bala -> obj -> list.add(obj);
 		// c++ bala -> obj
 		// java kethy
 		// java yashwant
 
+	}
+
+	@GetMapping("/searchbook")
+	public String searchBook() {
+		return "SearchBook";// jsp name -> must not add .jsp
+	}
+
+	@PostMapping("/searchbook")
+	public String searchBookDb(BookBean bookBean,Model model) {
+
+		// select * from book where bookName like '%java%';
+		// select * from books where bookName like 'java';
+
+		List<BookBean> books = stmt.query("select * from books where bookName like ?",
+				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { "%"+bookBean.getBookName()+"%" });
+		model.addAttribute("books",books);
+		return "ListBooks";
 	}
 
 }
