@@ -62,32 +62,41 @@ public class BookController {
 	}
 
 	@PostMapping("/searchbook")
-	public String searchBookDb(BookBean bookBean,Model model) {
+	public String searchBookDb(BookBean bookBean, Model model) {
 
 		// select * from book where bookName like '%java%';
 		// select * from books where bookName like 'java';
 
 		List<BookBean> books = stmt.query("select * from books where bookName like ?",
-				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { "%"+bookBean.getBookName()+"%" });
-		model.addAttribute("books",books);
+				new BeanPropertyRowMapper<BookBean>(BookBean.class),
+				new Object[] { "%" + bookBean.getBookName() + "%" });
+		model.addAttribute("books", books);
 		return "ListBooks";
 	}
 
 	@GetMapping("/deletebook")
 	public String deleteBook(BookBean bookBean) {
-		//delete from books -> remove all books 
-		//delete from books where bookId = XXX 
+		// delete from books -> remove all books
+		// delete from books where bookId = XXX
 		System.out.println(bookBean.getBookId());
-		
-		//update 
-		//query 
-		
-		stmt.update("delete from books where bookId = ?",bookBean.getBookId());
-		return "redirect:/listbooks"; 
+
+		// update
+		// query
+
+		stmt.update("delete from books where bookId = ?", bookBean.getBookId());
+		return "redirect:/listbooks";
 	}
-	
+
+	@GetMapping("/viewbook")
+	public String viewBook(BookBean bookBean,Model model) {
+
+		BookBean book = stmt.queryForObject("select * from books where bookId  = ?",
+				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { bookBean.getBookId() });// id :
+																											// single :
+			// 1 record
+		model.addAttribute("book",book);
+		
+		return "ViewBookAllInfo";
+	}
+
 }
-
-
-
-

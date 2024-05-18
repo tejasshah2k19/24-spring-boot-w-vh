@@ -17,7 +17,7 @@
 		<tr>
 			<th>BookId</th>
 			<th>BookName</th>
-			<th>AuthorName</th>
+			 
 			<th>Action</th>
 		</tr>
 
@@ -25,8 +25,10 @@
 			<tr>
 				<td>${b.bookId}</td>
 				<td>${b.bookName}</td>
-				<tD>${b.authorName}</tD>
-				<td><a href="deletebook?bookId=${b.bookId}">Delete</a></td>
+ 				<td>
+ 				<a href="deletebook?bookId=${b.bookId}">Delete</a>| 
+ 				<a href="viewbook?bookId=${b.bookId}">View</a>
+ 				</td>
 			</tr>
 		</c:forEach>
 	</table>
