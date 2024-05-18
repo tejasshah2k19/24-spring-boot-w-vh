@@ -18,6 +18,7 @@
 			<th>BookId</th>
 			<th>BookName</th>
 			<th>AuthorName</th>
+			<th>Action</th>
 		</tr>
 
 		<c:forEach items="${books}" var="b">
@@ -25,6 +26,7 @@
 				<td>${b.bookId}</td>
 				<td>${b.bookName}</td>
 				<tD>${b.authorName}</tD>
+				<td><a href="deletebook?bookId=${b.bookId}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>

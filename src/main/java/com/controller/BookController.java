@@ -73,4 +73,21 @@ public class BookController {
 		return "ListBooks";
 	}
 
+	@GetMapping("/deletebook")
+	public String deleteBook(BookBean bookBean) {
+		//delete from books -> remove all books 
+		//delete from books where bookId = XXX 
+		System.out.println(bookBean.getBookId());
+		
+		//update 
+		//query 
+		
+		stmt.update("delete from books where bookId = ?",bookBean.getBookId());
+		return "redirect:/listbooks"; 
+	}
+	
 }
+
+
+
+
