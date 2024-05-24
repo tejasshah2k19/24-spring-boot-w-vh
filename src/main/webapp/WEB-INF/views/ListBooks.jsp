@@ -27,7 +27,8 @@
 				<td>${b.bookName}</td>
  				<td>
  				<a href="deletebook?bookId=${b.bookId}">Delete</a>| 
- 				<a href="viewbook?bookId=${b.bookId}">View</a>
+ 				<a href="viewbook?bookId=${b.bookId}">View</a> |
+ 				<a href="editbook?bookId=${b.bookId}">Edit</a>
  				</td>
 			</tr>
 		</c:forEach>

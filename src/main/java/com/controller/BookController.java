@@ -99,4 +99,21 @@ public class BookController {
 		return "ViewBookAllInfo";
 	}
 
+	//href->url ->GET 
+	
+	@GetMapping("/editbook")
+	public String editBook(BookBean bookBean,Model model) {
+		
+		BookBean book = stmt.queryForObject("select * from books where bookId  = ?",
+				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { bookBean.getBookId() });// id :
+		model.addAttribute("book",book);
+		
+		
+		return "EditBook";
+	}
+	
+	
+	
+	
+	
 }
