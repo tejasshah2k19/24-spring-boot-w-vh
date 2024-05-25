@@ -10,12 +10,14 @@
 <h2>Edit Book</h2>
 
 
-	<form>
+	<form action="updatebook" method="post">
 	
 		BookName : <input type="Text" name="bookName" value="${book.bookName}"/><br><Br> 
 		
 		AuthorName : <input type="text" name="authorName"   value="${book.authorName}"/><br><br> 
 		
+		
+		<input type="hidden" name="bookId" value="${book.bookId}"/>
 		
 		<input type="submit" value="Update"/>
 	</form>

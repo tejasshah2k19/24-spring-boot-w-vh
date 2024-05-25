@@ -88,32 +88,35 @@ public class BookController {
 	}
 
 	@GetMapping("/viewbook")
-	public String viewBook(BookBean bookBean,Model model) {
+	public String viewBook(BookBean bookBean, Model model) {
 
 		BookBean book = stmt.queryForObject("select * from books where bookId  = ?",
 				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { bookBean.getBookId() });// id :
 																											// single :
-			// 1 record
-		model.addAttribute("book",book);
-		
+		// 1 record
+		model.addAttribute("book", book);
+
 		return "ViewBookAllInfo";
 	}
 
-	//href->url ->GET 
-	
+	// href->url ->GET
+
 	@GetMapping("/editbook")
-	public String editBook(BookBean bookBean,Model model) {
-		
+	public String editBook(BookBean bookBean, Model model) {
+
 		BookBean book = stmt.queryForObject("select * from books where bookId  = ?",
 				new BeanPropertyRowMapper<BookBean>(BookBean.class), new Object[] { bookBean.getBookId() });// id :
-		model.addAttribute("book",book);
-		
-		
+		model.addAttribute("book", book);
+
 		return "EditBook";
 	}
-	
-	
-	
-	
-	
+
+	@PostMapping("/updatebook")
+	public String updateBook(BookBean bookBean) {
+		// update
+		stmt.update("update books set bookName = ? , authorName = ? where bookId = ? ", bookBean.getBookName(),
+				bookBean.getAuthorName(), bookBean.getBookId());
+		return "redirect:/listbooks";
+	}
+
 }
